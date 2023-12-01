@@ -1,0 +1,30 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: DNDIndia-wind-turbine-app-dev
+  annotations:
+    argocd/app-name: DNDIndia-wind-turbine-app-dev
+    backstage.io/kubernetes-id: DNDIndia-wind-turbine-app
+    backstage.io/kubernetes-namespace: DNDIndia
+    backstage.io/techdocs-ref: dir:.
+    github.com/project-slug: rhdh23-demo/DNDIndia-wind-turbine
+    janus-idp.io/tekton-enabled: 'true'
+  tags:
+    - java
+    - quarkus
+    - maven
+    - workshop
+  links:
+    - url: https://console-openshift-console.apps.rosa-pzz6v.9nln.p1.openshiftapps.com/dev-pipelines/ns/DNDIndia/
+      title: Pipelines
+      icon: web
+    - url: https://console-openshift-console.apps.rosa-pzz6v.9nln.p1.openshiftapps.com/k8s/ns/DNDIndia/deployments/DNDIndia-wind-turbine-app
+      title: Deployment
+      icon: web
+    - url: https://devspaces.apps.rosa-pzz6v.9nln.p1.openshiftapps.com/#https://github.com/rhdh23-demo/DNDIndia-wind-turbine?che-editor=che-incubator/che-code/latest&devfilePath=.devfile-vscode.yaml
+      title: OpenShift Dev Spaces (VS Code)
+      icon: web
+spec:
+  type: service
+  lifecycle: production
+  owner: "user:default/ramkrsna"
